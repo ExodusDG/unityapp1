@@ -16,7 +16,7 @@
 
 <body>
     <!-- HEADER -->
-    <section class="header">
+    <section class="header" id="home">
         <div class="container">
             <!-- DESKTOP NAVBAR -->
             <header>
@@ -25,21 +25,24 @@
                     <li>
                         <div class="header__navbar_links">
                             <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Features</li>
-                                <li>Gallery</li>
-                                <li>Pricing</li>
-                                <li>FAQ</li>
-                                <li>Contact Us</li>
+                                <li><a href="#home">Home</a></li>
+                                <li>
+                                    <a href="#about">About</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                                <li><a href="#contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <div class="header__navbar_button">
-                            <span>DOWNLOAD</span>
-                            <img class="header__navbar_arrow" src="image/download_button_arrow.svg" alt="arrow">
-                        </div>
+                        <a href="#download">
+                            <div class="header__navbar_button">
+                                <span>DOWNLOAD</span>
+                                <img class="header__navbar_arrow" src="image/download_button_arrow.svg" alt="arrow">
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </header>
@@ -50,7 +53,9 @@
                     <h1>GET LANDING PAGE</h1>
                     <p class="header__body_title">for your app</p>
                     <p class="header__body_desc">Lorem Ipsum has been the industry's standard dummy text when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <button>MORE INFO</button>
+                    <a href="#about">
+                        <div class="header__more_button">MORE INFO</div>
+                    </a>
                     <div class="header__text_rating">
                         <img src="image/icons/rating.svg" alt="">
                         <p>Appstore and Google Play rating</p>
@@ -60,7 +65,7 @@
         </div>
     </section>
     <!-- ABOUT APP -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about__body">
                 <div class="title">
@@ -110,7 +115,7 @@
         </div>
     </section>
     <!-- OUR APP FEATURES -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="title">
                 <h2 class="title__name">OUR APP FEATURES</h2>
@@ -155,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="image/FeaturesPhone.svg" alt="FeaturesPhone">
+                <img src="image/Features_phone.png" alt="FeaturesPhone">
                 <div class="features__right">
                     <div class="features__right_item">
                         <div class="features__right_icon">
@@ -198,7 +203,7 @@
         </div>
     </section>
     <!-- GALLERY -->
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <div class="title">
             <h2 class="title__name">GALLERY</h2>
             <p class="title__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
@@ -215,7 +220,7 @@
         </div>
     </section>
     <!-- PRICING -->
-    <section class="pricing">
+    <section class="pricing" id="pricing">
         <div class="title">
             <h2 class="title__name">PLANS & PRICING</h2>
             <p class="title__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
@@ -369,7 +374,7 @@
         </div>
     </section>
     <!-- FAQ -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="title">
             <h2 class="title__name">Frequently Asked Questions</h2>
             <p class="title__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
@@ -420,7 +425,7 @@
         </div>
     </section>
     <!-- DOWNLOAD -->
-    <section class="download">
+    <section class="download" id="download">
         <div class="container">
             <div class="download__body">
                 <h2>DOWNLOAD OUR APP</h2>
@@ -433,7 +438,7 @@
         </div>
     </section>
     <!-- CONTACT US -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="title">
             <h2 class="title__name">Contact us</h2>
             <p class="title__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -470,28 +475,28 @@
                     <div class="footer__links">
                         <div>
                             <h2 class="footer__links_title">Navigation</h2>
-                            <a href="#">
+                            <a href="#home">
                                 <p>> Home</p>
                             </a>
-                            <a href="#">
+                            <a href="#features">
                                 <p>> Features</p>
                             </a>
-                            <a href="#">
+                            <a href="#about">
                                 <p>> About</p>
                             </a>
-                            <a href="#">
+                            <a href="#pricing">
                                 <p>> Pricing</p>
                             </a>
                         </div>
                         <div>
-                            <a href="#">
+                            <a href="#gallery">
                                 <p>> Gallery</p>
                             </a>
-                            <a href="#">
+                            <a href="#faq">
                                 <p>> FAQ</p>
                             </a>
-                            <a href="#">
-                                <p>> Pricing</p>
+                            <a href="#contact">
+                                <p>> Contact Us</p>
                             </a>
                         </div>
 
