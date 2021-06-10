@@ -58,9 +58,12 @@ $(document).ready(function() {
         }
 
         if (currentList.hasClass('faq__active')) {
-            currentBlock.css('height', 'auto')
+            currentBlock.css('transition', '0.3s');
+            currentBlock.css('height', '100px');
+
         } else {
-            currentBlock.css('height', '0px')
+            currentBlock.css('transition', '0.3s');
+            currentBlock.css('height', '0px');
         }
     });
     /* END */
@@ -79,5 +82,15 @@ $(document).ready(function() {
         //SHOW
         $('#' + tariffNumber).removeClass('tariff_right_hide')
         $('#' + tariffNumber).addClass('tariff_left_show') //показываем новый блок
+    });
+
+    /* SMOOTH SCROLL */
+
+    var $page = $('html, body');
+    $('a[href*="#"]').click(function() {
+        $page.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 600);
+        return false;
     });
 });
