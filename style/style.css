@@ -71,7 +71,7 @@ a {
 /* 2. Header */
 
 .header {
-    background: url("/image/header_background.svg");
+    background: url("../image/header_background.svg");
     background-repeat: no-repeat;
     height: 100vh;
     padding-top: 15px;
@@ -239,7 +239,7 @@ header>ul {
     margin-top: 100px;
     height: 340px;
     background-attachment: fixed;
-    background-image: linear-gradient(to top, rgba(34, 41, 69, 0.78), rgba(34, 41, 69, 0.78)), url(/image/app_stats_bg.png);
+    background-image: linear-gradient(to top, rgba(34, 41, 69, 0.78), rgba(34, 41, 69, 0.78)), url(../image/app_stats_bg.png);
 }
 
 .app__stats_items {
@@ -477,6 +477,37 @@ header>ul {
     color: white !important;
 }
 
+.tariff_right_hide {
+    display: none !important;
+    animation-name: tariff_right_hide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tariff_right_hide {
+    0% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(-1500px);
+    }
+}
+
+.tariff_left_show {
+    animation-name: tariff_left_show;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tariff_left_show {
+    0% {
+        transform: translateX(1500px)
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 .pricing__body_cards {
     margin-top: 90px;
     display: flex;
@@ -488,14 +519,15 @@ header>ul {
     padding-left: 40px;
     padding-right: 40px;
     width: 1140px;
+    box-sizing: border-box;
 }
 
 .pricing__body_card {
     padding-top: 50px;
     box-sizing: border-box;
     text-align: center;
-    width: 320px;
-    height: 500px;
+    width: 310px;
+    height: 480px;
     background: #F4F4F4;
     box-shadow: 0px 0px 44px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -529,7 +561,7 @@ header>ul {
 }
 
 .pricing__card_text {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 18px;
     color: #2C2C2C;
     font-weight: 400;
@@ -556,8 +588,8 @@ header>ul {
     padding-top: 5px;
     position: relative;
     bottom: 40px;
-    width: 400px;
-    height: 580px;
+    width: 380px;
+    height: 560px;
     background: #267FE5;
     color: white;
 }
@@ -592,7 +624,8 @@ header>ul {
     border-radius: 100px;
     background: white;
     position: relative;
-    left: 20px;
+    left: 15px;
+    bottom: 10px;
 }
 
 .premium__card_img {
@@ -704,7 +737,7 @@ header>ul {
 .download {
     height: 350px;
     background-attachment: fixed;
-    background-image: linear-gradient(to top, rgba(34, 41, 69, 0.78), rgba(34, 41, 69, 0.78)), url(/image/download_bg.png);
+    background-image: linear-gradient(to top, rgba(34, 41, 69, 0.78), rgba(34, 41, 69, 0.78)), url(../image/download_bg.png);
 }
 
 .download__body {
