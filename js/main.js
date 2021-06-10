@@ -73,19 +73,11 @@ $(document).ready(function() {
         var tariffNumber = $(this).text().replace('day', '').replace('s', '');
 
         //HIDE
-
+        $('#' + prevNumber).removeClass('tariff_left_show')
         $('#' + prevNumber).addClass('tariff_right_hide') //скрываем старый блок
-        function prevClassDelete() {
-            $('#' + prevNumber).removeClass('tariff_right_hide')
-        }
-        setTimeout(prevClassDelete, 1000);
 
         //SHOW
-
+        $('#' + tariffNumber).removeClass('tariff_right_hide')
         $('#' + tariffNumber).addClass('tariff_left_show') //показываем новый блок
-        function currentClassDelete() {
-            $('#' + prevNumber).removeClass('tariff_left_show')
-        }
-        setTimeout(currentClassDelete, 1000);
     });
 });
