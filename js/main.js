@@ -36,7 +36,18 @@ $(document).ready(function() {
         dots: true,
         autoplay: true,
         loop: true,
-        dotsEach: true
+        dotsEach: true,
+        responsive: {
+            430: {
+                items: 1
+            },
+            414: {
+                items: 1
+            },
+            0: {
+                items: 1
+            }
+        }
     });
     /* END */
 
@@ -93,4 +104,140 @@ $(document).ready(function() {
         }, 600);
         return false;
     });
+
+    /* UNIQUE NAVIGATION */
+
+    /* UP / DOWN BUTTONS */
+    $('.navigation__links_list').css('transform', 'translateY(0px)');
+
+    $('.navigation_arrows > img').click(function() {
+        var currentArrow = $(this).attr('class');
+        var list = $('.navigation__links_list');
+        var currentStyle = $('.navigation__links_list').attr('style');
+        var currentTranslate = Number(currentStyle.replace('transform: translateY(', '').replace('px);', ''));
+        console.log(currentTranslate)
+        if (currentArrow == 'up') {
+            var translateSize = currentTranslate + 40;
+            list.css('transform', 'translateY(' + translateSize + 'px)');
+        } else {
+            var translateSize = currentTranslate - 40;
+            list.css('transform', 'translateY(' + translateSize + 'px)');
+        }
+    });
+
+    /* HAMBURGER MENU */
+
+    $('.mobile__hamburger').click(function() {
+        $('.mobile__menu').removeClass('mobile__menu_hide');
+        $('.mobile__menu').addClass('mobile__menu_show');
+        $('html').attr('style', 'overflow-y:hidden');
+        $('body').attr('style', 'overflow-y:hidden');
+    });
+
+    $('.mobile__menu_close').click(function() {
+        $('.mobile__menu').removeClass('mobile__menu_show');
+        $('.mobile__menu').addClass('mobile__menu_hide');
+        $('body').attr('style', 'overflow-y:scroll');
+        $('html').attr('style', 'overflow-y:scroll');
+    })
+
+    /* PAGE ANIMATION */
+    var skroll = new Skroll()
+        .add(".header__body_text > h1", {
+            animation: "fadeInUp",
+            duration: 600,
+            wait: 250
+        })
+        .add(".header__body_text > p", {
+            animation: "fadeInUp",
+            delay: 120,
+            duration: 600,
+            wait: 350
+        })
+        .add(".header_phone", {
+            animation: "slideInLeft",
+            delay: 120,
+            duration: 600,
+            wait: 250
+        })
+        .add(".header__text_rating", {
+            animation: "fadeInUp",
+            delay: 600,
+            duration: 0,
+            wait: 0
+        })
+        .add(".about__body_title", {
+            animation: "fadeInUp",
+            duration: 600,
+            wait: 450
+        })
+        .add(".about__body_desc", {
+            animation: "fadeInUp",
+            duration: 700,
+            wait: 650
+        })
+        .add(".about__body_download", {
+            animation: "slideInLeft",
+            duration: 700,
+            wait: 550
+        })
+        .add(".about__app_screen", {
+            animation: "slideInRight",
+            duration: 700,
+            wait: 550
+        })
+        .add(".about__body_get_img", {
+            animation: "fadeInUp",
+            duration: 700,
+            wait: 650
+        })
+        .add(".app__stats_item", {
+            animation: "fadeInUp",
+            duration: 700,
+            wait: 650
+        })
+        .add(".features__left", {
+            animation: "slideInLeft",
+            duration: 700,
+            wait: 550
+        })
+        .add(".features__right", {
+            animation: "slideInRight",
+            duration: 700,
+            wait: 550
+        })
+        .add(".pricing__body_term", {
+            animation: "fadeInUp",
+            duration: 700,
+            delay: 300,
+        })
+
+    .add("#left-card", {
+            animation: "slideInLeft",
+            duration: 700,
+            wait: 550
+        })
+        .add("#right-card", {
+            animation: "slideInRight",
+            duration: 700,
+            wait: 550
+        })
+        .add("#center-card", {
+            animation: "fadeInUp",
+            duration: 700,
+            wait: 650
+        })
+
+    .add(".contact__body_info", {
+            animation: "slideInLeft",
+            duration: 700,
+            wait: 550
+        })
+        .add(".contact__body_form", {
+            animation: "slideInRight",
+            duration: 700,
+            wait: 550
+        })
+        .init();
+
 });
