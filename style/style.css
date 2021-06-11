@@ -2007,3 +2007,31 @@ header>ul {
         font-size: 20px;
     }
 }
+
+@media (max-width: 360px) {
+    .features__left_item {
+        height: 40%;
+        margin-bottom: 40px;
+        width: 110%;
+    }
+    .features__right_item {
+        height: 40%;
+        margin-bottom: 40px;
+        width: 110%;
+    }
+    .pricing__term_card {
+        padding-top: 23px;
+        width: 30%;
+        height: 70px;
+        font-size: 18px;
+    }
+    .faq_body_desc p {
+        width: 70%;
+    }
+    .download__body h2 {
+        font-size: 28px;
+    }
+    .contact__body_form {
+        width: 95%;
+    }
+}
