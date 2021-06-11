@@ -38,14 +38,17 @@ $(document).ready(function() {
         loop: true,
         dotsEach: true,
         responsive: {
-            430: {
+            0: {
                 items: 1
             },
             414: {
                 items: 1
             },
-            0: {
+            430: {
                 items: 1
+            },
+            431: {
+                items: 3
             }
         }
     });
