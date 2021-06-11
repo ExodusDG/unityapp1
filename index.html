@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -9,25 +9,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <link href="style/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="style/owl.carousel.min.css">
     <link rel="stylesheet" href="style/owl.theme.default.min.css">
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
+    <!-- MOBILE MENU -->
+    <div class="mobile__menu">
+        <div class="mobile_menu_header">
+            <p>Navigation</p>
+            <div class="mobile__menu_close">
+                <button class="hamburger hamburger--slider is-active" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                  </button>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="mobile__menu_info">
+            <p class="mobile__menu_text"><span>Adress 2:</span> 3th Floor, Above Public Park, 34</p>
+            <p class="mobile__menu_text"><span>Phone:</span> +38 096 488 3395, +38 067 362 4456</p>
+            <p class="mobile__menu_text"><span>Adress:</span> 34 Race Street Hudsonville, MI 49426</p>
+            <p class="mobile__menu_text"><span>Email:</span> admin@unityapp.com</p>
+        </div>
+    </div>
+    <!-- UNIQUE NAVIGATION -->
+    <div class="navigation" style="display: none;">
+        <div class="navigation__links_list">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="navigation_arrows">
+            <img src="image/icons/up.svg" alt="" class="up">
+            <img src="image/icons/down.svg" alt="" class="down">
+        </div>
+    </div>
+
     <!-- HEADER -->
     <section class="header" id="home">
         <div class="container">
-            <!-- DESKTOP NAVBAR -->
+
             <header>
-                <ul>
+                <!-- DESKTOP NAVBAR -->
+                <ul class="desktop__navbar">
                     <li><img src="image/logotype.svg" alt="logotype"></li>
                     <li>
                         <div class="header__navbar_links">
                             <ul>
                                 <li><a href="#home">Home</a></li>
-                                <li>
-                                    <a href="#about">About</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#features">Features</a></li>
                                 <li><a href="#gallery">Gallery</a></li>
                                 <li><a href="#pricing">Pricing</a></li>
@@ -45,10 +91,22 @@
                         </a>
                     </li>
                 </ul>
+
+                <!-- MOBILE NAVBAR -->
+                <ul class="mobile__navbar">
+                    <li><img src="image/logotype.svg" alt="Logotype"></li>
+                    <li class="mobile__hamburger">
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                              <span class="hamburger-inner"></span>
+                            </span>
+                          </button>
+                    </li>
+                </ul>
             </header>
             <!-- HEADER CONTENT -->
             <div class="header__body">
-                <img src="image/header_phone_image.svg" alt="header_phone">
+                <img class="header_phone" src="image/header_phone_image.svg" alt="header_phone">
                 <div class="header__body_text">
                     <h1>GET LANDING PAGE</h1>
                     <p class="header__body_title">for your app</p>
@@ -61,6 +119,7 @@
                         <p>Appstore and Google Play rating</p>
                     </div>
                 </div>
+                <img class="header_phone_mob" src="image/header_phone_image.svg" alt="header_phone">
             </div>
         </div>
     </section>
@@ -83,7 +142,7 @@
                             <a href="#"><img src="image/Btn_googleplay.svg" alt="GooglePlay"></a>
                         </div>
                     </div>
-                    <img src="image/about__app_screen.png" alt="AppScreen">
+                    <img class="about__app_screen" src="image/about__app_screen.png" alt="AppScreen">
                 </div>
             </div>
         </div>
@@ -235,7 +294,7 @@
                 <div class="pricing_cards_wrapper">
                     <!-- 1 DAY PLAN -->
                     <div class="pricing__body_cards tariff_left_show" id="1">
-                        <div class="pricing__body_card">
+                        <div class="pricing__body_card" id="left-card">
                             <div class="pricing__card_header">
                                 <p class="pricing__card_name">STARTER</p>
                                 <p class="pricing__card_desc">Perfect for small websites</p>
@@ -248,7 +307,7 @@
                             </div>
                             <button>ORDER NOW</button>
                         </div>
-                        <div class="pricing__body_card pricing_premium_card">
+                        <div class="pricing__body_card pricing_premium_card" id="center-card">
                             <img src="image/icons/fire.svg" alt="Fire" class="premium__card_img">
                             <div class="pricing__card_header">
                                 <p class="pricing__card_name premium_name">PREMIUM</p>
@@ -264,7 +323,7 @@
                             <div class="premium__card_circle"></div>
                         </div>
 
-                        <div class="pricing__body_card">
+                        <div class="pricing__body_card" id="right-card">
                             <div class="pricing__card_header">
                                 <p class="pricing__card_name">BUSINESS</p>
                                 <p class="pricing__card_desc">Capable for multiple sites</p>
@@ -448,9 +507,12 @@
                 <div class="contact__body_info">
                     <p class="contact__body_info_title">Get help, or answer your question right now!</p>
                     <p class="contact__body_info_desc">Our specialists work to get the answer to the question you are interested in as quickly as possible.</p>
-                    <p class="contact__body_info_text"><span>Adress:</span> 34 Race Street Hudsonville, MI 49426</p>
-                    <p class="contact__body_info_text"><span>Phone:</span> +38 096 488 3395, +38 067 362 4456</p>
-                    <p class="contact__body_info_text"><span>Email:</span> admin@unityapp.com</p>
+                    <div class="contact__body_info_data">
+                        <p class="contact__body_info_text"><span>Adress:</span> 34 Race Street Hudsonville, MI 49426</p>
+                        <p class="contact__body_info_text"><span>Adress 2:</span> 3th Floor, Above Public Park, 34</p>
+                        <p class="contact__body_info_text"><span>Phone:</span> +38 096 488 3395, +38 067 362 4456</p>
+                        <p class="contact__body_info_text"><span>Email:</span> admin@unityapp.com</p>
+                    </div>
                 </div>
                 <div class="contact__body_form">
                     <p class="contact__form_title">Contact form</p>
@@ -530,6 +592,7 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/skroll.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
