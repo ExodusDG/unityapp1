@@ -1,5 +1,66 @@
 $(document).ready(function() {
+
     "use strict";
+
+    /* TOP BUTTON */
+
+    var progressValue = document.querySelector('.progress');
+    var RADIUS = 50;
+    var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+    function progress(value) {
+        var progress = value / 100;
+        var dashoffset = CIRCUMFERENCE * (1 - progress);
+        progressValue.style.strokeDashoffset = dashoffset;
+    }
+    progressValue.style.strokeDasharray = CIRCUMFERENCE;
+    var pageHeight = $(document).outerHeight(true);
+
+    $(window).on('scroll', function() {
+        var distanceScrolled = $(window).scrollTop();
+        var scrollPercent = (distanceScrolled * 100) / pageHeight;
+        progress(scrollPercent);
+    });
+
+    $.fn.isInViewport = function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    $(window).on('resize scroll', function() {
+        if ($('.header_phone').isInViewport()) {
+            $('.scroll_up').removeClass('scroll_up_visible');
+        } else {
+            $('.scroll_up').addClass('scroll_up_visible');
+        }
+    });
+
+
+
+
+    /* PRELOADER */
+
+    setTimeout(preLoader, 1500);
+
+    function preLoader() {
+        setTimeout(loadingHide(), 1000);
+
+        function loadingHide() {
+            $('.loader').css('display', 'none')
+        }
+        $('.preloader__left').addClass('preloader__left_hidden');
+        $('.preloader__right').addClass('preloader__right_hidden');
+
+        window.setTimeout(function() {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+        }, 1000);
+    }
 
     /* APP STATS COUNTER */
     function statsCounter() {
