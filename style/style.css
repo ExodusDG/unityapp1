@@ -247,6 +247,24 @@ header>ul {
     color: white;
 }
 
+.fixed__menu {
+    background: #222945;
+    width: 100vw;
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    transform: translate3d(0, -100%, 0);
+    transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+    transition: 0.4s;
+}
+
+.fixed__menu_mb {
+    display: none;
+}
+
 
 /* 3. About */
 
@@ -1485,6 +1503,22 @@ svg .progress {
 }
 
 @media (max-width: 950px) {
+    .fixed__menu {
+        display: none;
+    }
+    .fixed__menu_mb {
+        display: block;
+        background: #222945;
+        width: 100vw;
+        height: 100px;
+        position: fixed;
+        top: 0;
+        padding-top: 20px;
+        box-sizing: border-box;
+        z-index: 998;
+        transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+        transition: 0.4s;
+    }
     .review {
         width: 47%;
         height: 20%;

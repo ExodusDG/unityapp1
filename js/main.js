@@ -2,6 +2,39 @@ $(document).ready(function() {
 
     "use strict";
 
+    /* FIXED NEMU */
+    var bodyWidth = $('body').width();
+
+    $.fn.isInViewport = function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+    if (bodyWidth < 950) {
+        $(window).on('resize scroll', function() {
+            if ($('.header').isInViewport()) {
+                $('.fixed__menu_mb').css('transform', 'translate3d(0, -110%, 0)');
+            } else {
+                $('.fixed__menu_mb').css('transform', 'translate3d(0, 0%, 0)');
+            }
+        });
+    } else {
+        $(window).on('resize scroll', function() {
+            if ($('.header').isInViewport()) {
+                $('.fixed__menu').css('transform', 'translate3d(0, -110%, 0)');
+            } else {
+                $('.fixed__menu').css('transform', 'translate3d(0, 0%, 0)');
+            }
+        });
+    }
+    if (bodyWidth < 950) {
+        $('.mobile__menu').css('overflow-y', 'scroll');
+    }
+
     /* TOP BUTTON */
 
     var progressValue = document.querySelector('.progress');
